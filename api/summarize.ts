@@ -1,5 +1,5 @@
 // This is a Vercel Serverless Function, which runs in a secure Node.js environment.
-
+export const config = { runtime: 'edge' };
 export default async function handler(req, res) {
     // 1. Only allow POST requests
     if (req.method !== 'POST') {
