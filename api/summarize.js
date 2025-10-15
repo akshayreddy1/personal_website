@@ -45,8 +45,8 @@ export default async function handler(req, res) {
         const systemPrompt = "Act as a world-class tech recruiter. Your task is to provide a concise, professional, and enthusiastic summary of a software engineer's profile based on the information provided. The summary should be one paragraph and highlight their key strengths, experience level, and technical abilities in a way that would impress a hiring manager. Do not use markdown, just plain text.";
 
         // 5. Call the Google Gemini API
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
+        
         const payload = {
             contents: [{ parts: [{ text: userQuery }] }],
             systemInstruction: { parts: [{ text: systemPrompt }] },
