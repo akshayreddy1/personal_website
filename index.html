@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshay's personal website</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Akshay's Personal Website</title>
+    <script src="https://cdn.tailwindcss.com"></script> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -16,10 +15,10 @@
         ::-webkit-scrollbar-thumb { background: #81b29a; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #6a9a81; }
 
-        /* --- Parallax Effect --- */
-        .parallax {
+        /* --- Parallax Effect (FIXED) --- */
+        /* 'background-attachment: fixed' was removed to prevent performance issues on mobile. */
+        .hero-background {
             background-image: url('https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-            background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -68,7 +67,6 @@
 </head>
 <body class="bg-[#f4f1de] text-[#3d405b]">
 
-    <!-- Header -->
     <header class="bg-[#3d405b]/90 backdrop-blur-sm fixed top-0 left-0 right-0 z-20 shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold tracking-tight text-[#f4f1de]">Akshay Reddy</h1>
@@ -78,11 +76,10 @@
                 <a href="#projects" class="text-[#f4f1de]/80 hover:text-[#f4f1de] transition duration-300">Projects</a>
                 <a href="#contact" class="text-[#f4f1de]/80 hover:text-[#f4f1de] transition duration-300">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-[#f4f1de] hover:text-white focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-[#f4f1de] hover:text-white focus:outline-none" aria-label="Open menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#3d405b] px-6 pt-2 pb-4 space-y-2">
             <a href="#about" class="block text-[#f4f1de]/80 hover:text-[#f4f1de] transition duration-300">About</a>
             <a href="#experience" class="block text-[#f4f1de]/80 hover:text-[#f4f1de] transition duration-300">Experience</a>
@@ -92,12 +89,10 @@
     </header>
 
     <main>
-        <!-- Hero Section with Parallax Effect -->
-        <section id="home" class="parallax">
-            <!-- Overlay for text readability -->
+        <section id="home" class="hero-background">
             <div class="bg-[#3d405b]/60 pt-24">
                 <div class="container mx-auto px-6 text-center py-24 md:py-32">
-                    <img src="ghiblified_personal_image.png" alt="Your Name" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[#e07a5f] shadow-lg">
+                    <img src="ghiblified_personal_image.png" alt="Illustrated profile picture of Akshay Reddy" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-[#e07a5f] shadow-lg">
                     <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-[#f4f1de] min-h-[120px] sm:min-h-[144px] lg:min-h-0 flex items-center justify-center">
                         <div>
                             <span id="typewriter"></span><span class="cursor"></span>
@@ -114,18 +109,17 @@
             </div>
         </section>
 
-        <!-- About Me Section -->
         <section id="about" class="py-20 bg-[#f4f1de] fade-in-section">
             <div class="container mx-auto px-6">
                 <div class="grid md:grid-cols-9 gap-16 items-center">
                     <div class="relative order-2 md:order-1 md:col-span-4">
                          <div class="absolute inset-0 bg-[#81b29a]/50 rounded-lg transform rotate-3 transition-transform duration-300 hover:rotate-0 -z-10"></div>
-                         <img src="about_me_image.png" alt="Working at desk" class="rounded-lg shadow-xl w-full">
+                         <img src="about_me_image.png" alt="Akshay Reddy working at a desk with a laptop" class="rounded-lg shadow-xl w-full">
                     </div>
                     <div class="order-1 md:order-2 md:col-span-5">
                         <h3 class="text-4xl font-bold mb-6">About Me</h3>
                         <p id="about-p1" class="text-[#3d405b]/80 mb-4 leading-relaxed">
-                            Hello! I'm a passionate Software Engineer with a proven track record of developing robust and efficient applications. My experience at a Google has allowed me to work on projects at a massive scale, focusing on performance, reliability, and user experience.
+                            Hello! I'm a passionate Software Engineer with a proven track record of developing robust and efficient applications. My experience at Google has allowed me to work on projects at a massive scale, focusing on performance, reliability, and user experience.
                         </p>
                         <p id="about-p2" class="text-[#3d405b]/80 mb-6 leading-relaxed">
                             I thrive in collaborative environments and am always eager to learn new technologies. My goal is to leverage my skills to build products that make a difference.
@@ -158,14 +152,11 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="py-20 bg-[#f4f1de] border-t border-t-[#e07a5f]/20 fade-in-section">
             <div class="container mx-auto px-6">
                 <h3 class="text-4xl font-bold text-center mb-16">Professional Experience</h3>
                 <div id="experience-container" class="relative max-w-4xl mx-auto">
-                    <!-- Vertical line -->
                     <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-[#81b29a]/50"></div>
-                    <!-- Timeline Item 1 -->
                     <div class="mb-8 flex justify-between items-center w-full timeline-item">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-10 flex items-center order-1 bg-[#e07a5f] shadow-xl w-8 h-8 rounded-full">
@@ -180,7 +171,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- Timeline Item 2 -->
                     <div class="mb-8 flex justify-between flex-row-reverse items-center w-full timeline-item">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-10 flex items-center order-1 bg-[#e07a5f] shadow-xl w-8 h-8 rounded-full">
@@ -198,7 +188,6 @@ users & 50 million mobile users..</li>
                             </ul>
                         </div>
                     </div>
-                    <!-- Timeline Item 3 -->
                     <div class="mb-8 flex justify-between items-center w-full timeline-item">
                         <div class="order-1 w-5/12"></div>
                         <div class="z-10 flex items-center order-1 bg-[#e07a5f] shadow-xl w-8 h-8 rounded-full">
@@ -218,42 +207,37 @@ users & 50 million mobile users..</li>
             </div>
         </section>
 
-        <!-- Projects Section -->
         <section id="projects" class="py-20 bg-[#f4f1de] border-t border-t-[#e07a5f]/20 fade-in-section">
             <div class="container mx-auto px-6">
                 <h3 class="text-4xl font-bold text-center mb-12">Featured Projects</h3>
                 <div id="projects-container" class="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Project 1 -->
                     <div class="bg-white rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-xl border border-gray-200/50">
-                        <img src="llm_orchestrator.png" alt="Project 1" class="w-full h-48 object-cover">
+                        <img src="llm_orchestrator.png" alt="Screenshot of the LLM Agent Orchestrator app" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 project-title">LLM Agent orchetrator</h4>
                             <p class="text-[#3d405b]/80 mb-4">An intelligent, multi-tool agent powered by a Large Language Model, integrating multiple real-world data APIs and deploying on a serverless architecture.</p>
                             <div class="flex gap-4">
-                                <a href="https://akshays-llm-agent-orchestrator.vercel.app/" target="_blank" class="text-[#e07a5f] hover:text-opacity-80 font-semibold">Live Demo, click to use</a>
+                                <a href="https://akshays-llm-agent-orchestrator.vercel.app/" target="_blank" class="text-[#e07a5f] hover:text-opacity-80 font-semibold">Live Demo</a>
                                 <a href="https://github.com/akshayreddy1/akshays-llm-agent-orchestrator" target="_blank" class="text-[#e07a5f] hover:text-opacity-80 font-semibold">Source Code</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Project 2 -->
                     <div class="bg-white rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-xl border border-gray-200/50">
-                        <img src="bitcoin_price_prediction.png" alt="Project 2" class="w-full h-48 object-cover">
+                        <img src="bitcoin_price_prediction.png" alt="Graph showing Bitcoin price trends and predictions" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 project-title">Bitcoin price prediction</h4>
                             <p class="text-[#3d405b]/80 mb-4">Bitcoin price prediction model that leverages a Large Language Model (LLM) to analyze market sentiment. Unlike traditional models that only use historical price data, this tool processes real-time news articles, social media trends, and financial reports to capture the human element driving market volatility, providing a more nuanced and context-aware forecast.</p>
                         </div>
                     </div>
-                    <!-- Project 3 -->
                     <div class="bg-white rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-xl border border-gray-200/50">
-                        <img src="personal_finance_tracker.png" alt="Project 3" class="w-full h-48 object-cover">
+                        <img src="personal_finance_tracker.png" alt="Dashboard of a personal finance tracking application" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 project-title">Personal finance tracker</h4>
                             <p class="text-[#3d405b]/80 mb-4">Intelligent personal finance tracker designed to make money management effortless and insightful. Powered by AI, the application automatically categorizes expenses with high accuracy, identifies personal spending trends, and provides proactive alerts on unusual activity. It moves beyond simple data entry, offering users a clear, automated, and predictive view of their financial health.</p>
                         </div>
                     </div>
-                    <!-- Project 4-->
                     <div class="bg-white rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 shadow-xl border border-gray-200/50">
-                        <img src="smart_home_automation_app.png" alt="Project Four" class="w-full h-48 object-cover">
+                        <img src="smart_home_automation_app.png" alt="Interface of a smart home control application" class="w-full h-48 object-cover">
                         <div class="p-6">
                             <h4 class="text-xl font-bold mb-2 project-title">Smart home automation app</h4>
                             <p class="text-[#3d405b]/80 mb-4">A custom-built smart home application that acts as a centralized command center for home's connected devices. Its core feature allows for complex and deeply personalized automation routines. The app provides a fully custom user interface for intuitive control and integrates seamlessly with voice assistants like Alexa for advanced, hands-free commands.</p>
@@ -263,7 +247,6 @@ users & 50 million mobile users..</li>
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 bg-[#f4f1de] border-t border-t-[#e07a5f]/20 fade-in-section">
             <div class="container mx-auto px-6 text-center">
                 <h3 class="text-4xl font-bold mb-4">Get In Touch</h3>
@@ -274,12 +257,10 @@ users & 50 million mobile users..</li>
                     Email Me
                 </a>
                  <div class="flex justify-center gap-6 mt-8">
-                    <a href="https://github.com/akshayreddy1" target="_blank" class="text-[#3d405b]/60 hover:text-[#3d405b] transition duration-300">
-                        <!-- GitHub Icon -->
+                    <a href="https://github.com/akshayreddy1" target="_blank" aria-label="Visit Akshay's GitHub profile" class="text-[#3d405b]/60 hover:text-[#3d405b] transition duration-300">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.838 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/akshay-reddy-13657179/" target="_blank" class="text-[#3d405b]/60 hover:text-[#3d405b] transition duration-300">
-                        <!-- LinkedIn Icon -->
+                    <a href="https://www.linkedin.com/in/akshay-reddy-13657179/" target="_blank" aria-label="Visit Akshay's LinkedIn profile" class="text-[#3d405b]/60 hover:text-[#3d405b] transition duration-300">
                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
                         </svg>
@@ -289,14 +270,12 @@ users & 50 million mobile users..</li>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-[#3d405b] py-6">
     </footer>
 
-    <!-- Gemini Summary Modal -->
     <div id="summary-modal" class="fixed inset-0 bg-[#3d405b]/80 backdrop-blur-sm z-30 flex items-center justify-center hidden opacity-0">
         <div class="bg-[#f4f1de] rounded-lg shadow-2xl max-w-2xl w-11/12 p-6 md:p-8 relative">
-            <button id="close-modal-button" class="absolute top-4 right-4 text-[#3d405b]/50 hover:text-[#3d405b]">
+            <button id="close-modal-button" class="absolute top-4 right-4 text-[#3d405b]/50 hover:text-[#3d405b]" aria-label="Close modal">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h3 class="text-2xl font-bold mb-4 text-[#3d405b]">✨ AI-Generated Summary</h3>
@@ -304,8 +283,7 @@ users & 50 million mobile users..</li>
                 <div class="loader"></div>
             </div>
             <div id="summary-content" class="text-[#3d405b]/90 leading-relaxed hidden prose">
-                <!-- AI-generated content will be inserted here -->
-            </div>
+                </div>
         </div>
     </div>
 
@@ -395,10 +373,10 @@ users & 50 million mobile users..</li>
             }
 
             async function generateSummary() {
-                const apiKey = "AIzaSyCJofUerT8Hq0hL8D-deO5xmLAf-T3APLQ";
+
+                // This function now calls a serverless function located at '/api/summarize'.
                 
                 try {
-                    // 1. Collect profile data from the page
                     const aboutText1 = document.getElementById('about-p1')?.innerText;
                     const aboutText2 = document.getElementById('about-p2')?.innerText;
                     const skills = Array.from(document.querySelectorAll('#skills-container span')).map(s => s.innerText).join(', ');
@@ -412,73 +390,29 @@ users & 50 million mobile users..</li>
 
                     const projects = Array.from(document.querySelectorAll('#projects-container .project-title')).map(p => p.innerText).join(', ');
 
-                    const userQuery = `
-                        Here is the profile of a software engineer:
-                        ---
-                        ABOUT:
-                        ${aboutText1}
-                        ${aboutText2}
-                        ---
-                        SKILLS:
-                        ${skills}
-                        ---
-                        EXPERIENCE:
-                        ${experience}
-                        ---
-                        PROJECTS:
-                        ${projects}
-                    `;
-                    
-                    const systemPrompt = "Act as a world-class tech recruiter. Your task is to provide a concise, professional, and enthusiastic summary of a software engineer's profile based on the information provided. The summary should be one paragraph and highlight their key strengths, experience level, and technical abilities in a way that would impress a hiring manager. Do not use markdown, just plain text.";
-
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-                    const payload = {
-                        contents: [{ parts: [{ text: userQuery }] }],
-                        systemInstruction: { parts: [{ text: systemPrompt }] },
-                    };
-
-                    let response;
-                    let retries = 3;
-                    let delay = 1000;
-                    
-                    for (let i = 0; i < retries; i++) {
-                         response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
-                        });
-
-                        if (response.ok) break;
-
-                        if (i < retries - 1) {
-                            await new Promise(resolve => setTimeout(resolve, delay));
-                            delay *= 2; // Exponential backoff
-                        }
-                    }
+                    // The data is now sent to secure backend endpoint
+                    const response = await fetch('/api/summarize', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ aboutText1, aboutText2, skills, experience, projects })
+                    });
 
                     if (!response.ok) {
-                        let errorText = `API request failed with status: ${response.status}`;
-                        try {
-                            const errorResult = await response.json();
-                            errorText = errorResult?.error?.message || errorText;
-                        } catch (e) {
-                            console.error("Could not parse error response:", e);
-                        }
-                        throw new Error(errorText);
+                        const errorResult = await response.json();
+                        throw new Error(errorResult.error || `API request failed with status: ${response.status}`);
                     }
 
                     const result = await response.json();
-                    const summaryText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+                    const summaryText = result.summary;
                     
                     if (summaryText) {
                         summaryContent.innerHTML = summaryText.replace(/\n/g, '<br>');
                     } else {
-                        summaryContent.innerText = "Sorry, I couldn't generate a summary at this time. The API returned an empty response.";
+                        summaryContent.innerText = "Sorry, I couldn't generate a summary at this time.";
                     }
                 } catch (error) {
                     console.error('Error generating summary:', error);
-                    summaryContent.innerText = `An error occurred while generating the summary. ${error.message}`;
+                    summaryContent.innerText = `An error occurred while generating the summary. Please try again later.`;
                 } finally {
                     summaryLoader.style.display = 'none';
                     summaryContent.style.display = 'block';
@@ -488,5 +422,3 @@ users & 50 million mobile users..</li>
     </script>
 </body>
 </html>
-
-
